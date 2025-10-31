@@ -1,0 +1,69 @@
+% Document Format
+
+
+%     The title should match the stated Title
+%     The authors should be: George A. Bekey, Robert B. McGhee, and (typeset by) YourFirst YourLast.
+%     Do not include department affiliation.
+%     Sections should be numbered with Arabic numerals. The document mixes Roman and Arabic numbering
+%     Section title should NOT be underlined.
+%     The first page should be numbered 1. The page "NOTICE..." should not be numbered. Then the next page should be number 2.
+%     You are to include the running header "COMPUTING METHODS IN OPTIMIZATION PROBLEMS" beginning at page 2.
+
+% Stylistic Format
+
+%     Vectors should be formatted as boldface instead of with an overline or vector. For example, 
+
+% instead of or
+% .
+% The gradient operator should not be boldface. So the symbol
+% should instead be
+
+%     .
+%     Citations should appear in square brackets [1] rather than underlined parentheses (1).
+%     Nothing in the References should be underlined.
+%     Citations should be numbered according to appearance in the text.
+
+%     All bounding parentheses need to be scaled to an aesthetically pleasing size (so, they can't be too huge and they can't be too small)
+%     The height of each figure should be 0.3\textheight (I leave it up to your creativity to get these figures in your document)
+%     I only include page 21 so that you can see the references. You do not have to typeset the text or math equations on page 21 that appear before the references.
+
+% Compiling
+
+%     You need to include your .tex source file, your .bib bibliography file, and the compiled .pdf. If you use an external preamble file, you also need to include that so that I can compile your entire document locally on my computer.
+
+
+
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+%\usepackage[backend=biber,style=numeric,sorting=ynt]{biblatex}
+%\addbibresource{bibliography.bib}
+\usepackage{lipsum}
+\usepackage[linkcolor=blue,citecolor=red,colorlinks=true]{hyperref} % All links to equations and figures should be colored blue. All links to citations should be colored red.
+\usepackage[a4paper, margin=0.75in]{geometry} % The document should have 0.75 inch margins (top,bottom,left, and right).
+
+
+
+\title{Sandbox}
+\author{Andrew Sparkes}
+\date{October 2025}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+%\lipsum[1-3] \cite{guckenheimer2000numerical}
+%\lipsum[4-7] \cite[Section 3]{melland2021differentiable}
+
+
+
+%\printbibliography % using biblatex
+
+
+\bibliographystyle{plain}
+\bibliography{./bibliography.bib}
+
+
+
+\end{document}
