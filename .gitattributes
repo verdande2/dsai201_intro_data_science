@@ -1,0 +1,9 @@
+# Source - https://stackoverflow.com/a
+# Posted by ocean11, modified by community. See post 'Timeline' for change history
+# Retrieved 2025-11-14, License - CC BY-SA 4.0
+# NOTE: Add to .git/config as well:
+#
+#[filter "strip-notebook-output"]
+#	clean = jupyter nbconvert --ClearOutputPreprocessor.enabled=True --to=notebook --stdin --stdout --log-level=ERROR
+#
+*.ipynb filter=strip-notebook-output
