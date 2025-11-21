@@ -3,7 +3,7 @@
   "editor.wordWrap": "on",
   "files.autoSave": "afterDelay",
   "terminal.integrated.fontSize": 12,
-  "workbench.colorTheme": "Default Dark Modern",
+  "workbench.colorTheme": "SynthWave '84",
   "notebook.formatOnSave.enabled": true,
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
