@@ -1,0 +1,498 @@
+
+****** Result for Image/Page 1 ******
+NGR-05-018-022
+GRADIENI METHODS FOR THE OPTIMIZATION OF DYNAMIC"
+SYSTEM PARAMETERS BY HYBRID COMPUTATION
+Geofge 1. Bekey and Robert B. MaGhee
+Electrical Engineering Department
+University of Southern California
+Los Angeles, California
+I INTRODUCTION
+This paper is concerned
+with the computer implemen-
+tation cl both continuous and
+discrete gradient
+for adjusting the parameters of
+a dynamic system so as to
+match a specified response function as closely as possi-
+ble.
+While the basic theory of
+parameter optimization by
+gradient descent has been known for some time, the lim-
+itations and convergence properties of particular methods
+of computer implementation are not yet weli understood.
+This paper is intended to be a contribution toward obtain-
+ing a better understanding of these problems.
+Continuous parameter optimization is
+an appealing
+concept and a number of "adaptive control"
+schemes have
+been based on it.
+The first part of this paper reviews
+the formulation of a continuous
+steepest descent algorithm
+and discusses its difficulties.
+Computer results relating
+to the nature of, the gradient
+and the dependence of the
+path in parameter space on adjustment gain are given.
+The second part of the paper reviers briefly sev-
+eral discrete gradient optimization techniques.
+An algo-
+rithm for automatic adjusiment of step size for gradient
+descent is presentedu
+The stability and convergence prop-
+erties of first and second
+order iteration
+schemes are
+compared
+and some new results are presented in the form
+of a convergence theorem.
+The application of discrete
+parameter optimization
+methods to a nonlinear dynamic
+is illustrated with an example,
+This research was supported in part at the University
+of Southern California under U. S. Air Force Office of
+Scientific Research Grant No. AF-AFOSR-75-63 and in part
+Technology Laboratories, Inc,, under National
+Aeronautics and Space: Administration Contract NASl-2582.
+reproducad by
+NATIONAL TECHNICAL
+INFORMATION SERVICE.
+Sonngfield, Va.
+22151
+(THRU)
+(CATEGORY)
+M
+Nº66
+ACCESSION NUBBER)
+-
+80
+(NASA CR OR IMX OR AD NUMBER)
+23 pm.
+****** Result for Image/Page 2 ******
+N
+o T
+I
+E
+THIS DOCUMENT HAS BEEN REPRODUCED FROM THE
+BEST COPY FURNISHED US BY THE SPONSORING
+AGENCY. ALTHOUGH IT IS RECOGNIZED THAI CER-
+TAIN PORTIONS ARE ILLEGIBLE, IT IS BEING RE-
+LEASED IN THE INTEREST OF MAKING AVAILABLE
+AS MUCH INFORMATION AS POSSIBLE.
+****** Result for Image/Page 3 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+The final section of the paper presents a formula-.
+tion of a hybrid computational strategy for parameter
+optimization which includes the best features of both the
+analog and digital computer solutions.
+2. CONTINUOUS PARAMETER OPTIMIZATION
+We consider continuous dynamic systems described by
+I = F (5, t; P)
+(1)
+¡ is
+system and
+*an a vector representins the state of the
+is an m-vector representing the parameters
+to be optimized, including initial conditions.
+The param-
+eter optimization problem under consideration is that of
+selecting
+in such a way that the solution of Eq. (1)
+approximates a given function, yalt), as closely as pos-
+The particular criterion function to be used as
+a basis for parameter adjustment in this paper is given
+(2)
+Gradient methods of optimization are based upon
+adjustment of parameters utilizing the local gradient
+That is, a parameter change vector, Ap, is com-
+puted
+according to the rule
+(3)
+where
+K is a positive delinite matrix and IØ is the
+column
+vector
+[ø[ =
+ae
+бр.
+(4)
+Following the i-th such calculation, the value of the
+parameter
+rector is giver by.
+p(i+1)
+= P(1) + Ap(1}
+(5)
+The convergence properties of several iteration schemes
+of this type
+are discussed in Section 3 of this paper.
+Consider now the case where continuous. parameter
+adjustment is desired.
+It is clear that the criterion
+function
+defined by Eq. (2) cannot be used directly sinco
+it leads to an iterative adjustmènt algorithm. 'Let us.
+therefore define an instantaneous performance criterinn
+****** Result for Image/Page 4 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+=Lyltiplt))-yalt)]?
+(6)"
+Unfortunatoly,
+I is a functional in D(t)
+rather than an
+ordinary function.
+Consequently, the gradient vector,
+TI(B), does not exist unless
+5(t)
+is a constant.
+But
+contradicts the original objective of the formula-
+tion, namely, to adjust D continuously as a function of
+different approaches to the resolution of this
+dilemma havé been
+taken. If the desired output isa vector
+of derivatives,
+jalt), with dimension equal to the order
+of the system to be optimized, then
+Eg. (I) may be used
+to derive a criterion function which is a simple function
+ever when
+varies with tine, Specifically, if
+(7)
+then the gradient
+(8)
+exists and may be used to find a minimizing value for f
+by making use of the adjustment algorithm
+(9)
+This method,
+sometinos called the "equation error method"
+has been used by Graupe (1), Ornstein (2), and others in
+connection with identification problems.
+thile the equation error method avords the diffi-
+associated with Eg. (6), computer implementation of
+the
+method requires
+that desirèd values for all of the
+system
+state variables be available.
+An alternate ior-
+mulation, based on the work of Whitaker (2) and Margolis
+(4) does
+not require complete specification oi the desir-
+ed state, but leads only to an
+approximate gradient meth-
+od. The degree oi approximation is related to the rate
+of change of adjustment of the parameters as compared to
+the natural frequencies of
+both
+the syster and the input
+process. The remainder oi
+this paper is restricted to
+the latter
+; iornulation; juên, to circumstances where ya
+is a scalar function. While the basic technique to be
+described for continuous parameter adjustment is not new,
+the results pertaining to the dynamic proporties of the
+parameter adjustment process have not been previoualy
+published.
+2.i The Approximate Gradient, Method.
+Tho performance criterion Eq. (7) requires complete
+knowledge of the desired
+state, Let us consider instead
+2
+****** Result for Image/Page 5 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+the criterion
+(10)
+where p<n
+is the order of the system, and
+(11)
+is given as a scalar function, error deriv.
+atives must be orained a sala concier ree era
+In many practical situations it is possible to
+choose all the
+9; =0, so that only the system output
+(or zero-state) is required. The quantity ec represents
+"output error" and parameter optimization based on Eg.
+(10) may be called the "output error method".
+Let us choose
+01 * 9e
+Then, if the parameters are constant, the components of
+the gradient are given by
+(22)
+др:
+210c1 = 40
+др:
+c1 +9e
+c2'
+(13)
+i = 1,2, 000 m
+Using the definition of
+dal and eca from Eqo (1l) and
+since
+Ya 15
+independent of the parameters, Eq. (13) can.
+be written as
+др,
+6=20c+ 9e
+→55"=9Y2ls 1248
+i = 1,2,
+==°m
+where
+first
+hore do vative represent.
+represent the system output and its
+respectively.
+Let us denote the influ-
+ence coefficients by the letter
+so that
+(15)
+The influence coefficients can be obtained by differen-
+tiation of the system Eq. (1) with respect to the appro-
+iate parameters and solving the resulting differential
+equation in
+"jj (the "sensitivity equation") (5). Analoa
+for the sisultaneous eval-
+vation of the
+ujj and the
+Now, il the parameters are adjusted, yi becomes a
+3
+****** Result for Image/Page 6 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+Iunctional
+and the
+ayi/apj do not exist in the ordinary
+Let us assume, however, that in a given solution
+interval,
+the variation is sufficiently slow so that Pj
+can be assumed constant.
+Then, a continuous gradient.
+method is based or
+др;
+(16)
+However, analog computer circuits based on Eq. (16) are in
+mechanizations of
+(17)
+where the vector
+¿ = [91, 92)
+which approaches
+on.!
+is an approxima-
+which enter into the calculation of the di can be
+considered subsidiary
+sensitivity coefficients
+variables which
+equal the desired
+An analog computer implementation of the approximate
+gradient method (the output error mothod) is shown in Fig.
+in Ego (12).
+This figure illustrates the
+application of the mothod to an identification problem.
+As long as
+is open, the parameters are
+constant and
+E = Tic.
+Consequently, the nature of the
+gradient can be studied in the open-loop case.
+Ihen, the
+switch can be closed for examination of the actual param=
+eter adjustment path.
+2.2 The Nature of the Criterion Surface
+Let
+I =0
+21=15, - Yal?
+(18)
+and define the parameter offsets
+8P s
+by
+lo)
+(i)
+- Pi
+(19)
+whore plo
+represents the assumed initial values of the
+parameters and Pi
+the values which minimize Ic
+Then, is the 100p is open, we can expand fc
+as follows:
+m
+(17)-1885011558s
+(20)
+If the 8p
+are sufficiently small, secord and higher
+order terma may be neglected and
+****** Result for Image/Page 7 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+DESIRED
+SYSTEM
+PERFORMANCE
+ec
+APPROX.
+GRADIENT
+COMPUTER
+MATH. MODEL
+OR
+SYSTEM BEING
+OPTIMIZED
+SECONDARY
+EQUATIONS
+Une dylapn
+S
+Fig. 1. Schemutic oi Continuous Parameter
+Optimization Method
+Ic=C
+PI
+• d
+5(0)
+P2
+Fig: 2.
+Instantaneous
+Criterion Surface
+****** Result for Image/Page 8 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+(21)
+Coma gunt on turns frontant"
+Ic(t) = C, at any
+- e 15'°)
+" t; (22)
+equation
+represents two parallei lines in the
+dimensional space of the parameters and criterion func-
+If only 2 parameters
+are present,
+is possible to obtain a simple geometrical interpretation
+of this aquation as shown in FIg. 2.
+It can be seen that
+the instantancous criterion function surface 15 a parabol-
+ic trough, where the initial and
+final parameter values
+are indicated.
+The contour lines in the PI - P2 plane
+are straight lines, while the intersection of the trough
+planes results in the familiar quad-
+should be noted that Fig. 2 represents
+an instantaneous situation, 4s the
+"Ij and ec
+with time, the trough moves in such a way that
+its min-
+still crosses the desired final point (6).
+2.3 The Gradient Vector
+Considerable
+insight into the naturt oi the adjust-
+ment process is gained
+If the gradient iwith
+s open, of
+course; is evaluated with
+1 a sinusoidal input. The gra-
+dient is given by
+55 = 2/04
+11: c
+l' (23)
+Consider,
+obtained iron
+relation
+rot example
+or a order system describe by neto
+{ 24)
+where
+-22
+and the coefficients
+signal x(t)
+is nte input
+to optinize the
+parameters
+actibed by.
+y = Ay + Bx
+= °
+ane process.
+are constants.
+It is desired
+a4, of a model de-
+6
+****** Result for Image/Page 9 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+Then from Eq. (35)
+(46)
+and therefore
+58p=2(506p+08p
+(47)
+Substituting this expression into
+Ego (40), produces the result
+the Gauss-Newton formula,
+(48)
+everer, under the assumptions ragarding y(tip). and
++ 018p(1),
+(49)
+s0 Eq. (48) reducas to
+(50)
+where Ri
+op approaches zero.
+15 & renainder, matrix which tends to zero a
+6p (1+1)
+= 8p (1)
++ Sp (1)
+Eq. (50) fields the recursion relation
+0p (1+1)
+(51)
+(52)
+By choosing to sufficiently smail, the remainder matrix,
+as desired in comparison to Q.
+and only il ali of the eigenvalues of
+converges to zero il
+one in absolute value.
+Q ara less that
+REFERENCES
+Graupe, K. Ko, "Analog Solution of Some Functional
+Analysis
+Probleng"
+• AILE Transactions, January 1961.
+2. Potts, I. Fo, Ornstein, G. No, and Clymer, A. B.,
+"The Automatic Determination oi Human and Other System
+ortere py cedings 45e Western Joint Computer
+parameters"
+2/
+****** Result for Image/Page 10 ******
+COMPUTING METHODS IN OPTIMIZATION PROBLEMS
+4• Margolis, Ma, On the Theory of Process Adaptive Con-
+trol Systens,
+Learning Model Approach,
+Report No. 60-
+University of California, Department of Engineering,
+Los Angeles, California, (May 1960).
+Meissinger, H. F.,
+"The Use of Parameter Influenco
+Cocfficients in Computer Anulysis of Dynanic Systems"
+Precocdings of the Western Joint Computer Conferenco, 1960,
+pp. 181-192 (May 1560).
+Dekey, G. A., and Menssinger, I. I., and rose, R. I.,
+"Study oi Model Matching Tochniques ior the Determination
+of Parameters in luman Pilot Models", Reports No. 8426-
+6002-11-000, 8426-5003-10-000, ina 3426-6001-RU-000, Spaca
+Technology Laboratories, Rodondo Beach, Calif, (1963).
+7. Bromberg, No S., "Marimacation and Menimization of
+Complicated Multi-Variable Functions", AILE Transactions;
+Yot: 53, Part 1, PP. 725-730, (January 1902).
+B. MeGhee, B. Bo, Identilication O Nonlinour Dynanc
+Systems by Regression Analysis Methods, PhoD. dissertation
+University of Southern California, Los Angeles, Caliiornia
+(June 1963),
+7.
+Ruser, do 1., "The Gradient Projection Method ior Non-
+lincar Progranming, Part 1, Linear Constraints", J. Soc.
+Indust- Ap21. Math., Vol. 3, No. I, pp. 181-21? (March
+1900).
+io. Roson, J. 3., ithe Gradarnt Progection Mothod ior Non-
+lincar Programming, Part II, Nonlincar Constraints", J. Soc.
+Indust. Appi. Math, Vol. D, do. 4, PP. 514-532, (December
+1961).
+Chernofi, "., and Crocicit, J. b., "Gradient Methodis
+of Maximization"
+• Pacific inurnal oi Mathematics, Vol. 5,
+pp. 33-50 (1955).
+sons, Inc., New York, N. Yo.
+13. Hartley,
+I. O., "The Modifzed Gauss-Newton. Method lor
+the Fitting of Nonlincar Regression Funcions by Least
+Squares", Iechnometrics, Voi. 3, No. 2, PP. 269-380 (May
