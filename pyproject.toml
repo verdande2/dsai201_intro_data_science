@@ -7,8 +7,10 @@ requires-python = ">=3.13"
 dependencies = [
     "docling>=2.56.1",
     "duckdb>=1.4.1",
+    "kagglehub>=0.3.13",
     "manim>=0.19.0",
     "matplotlib>=3.10.7",
+    "mlcroissant>=1.0.22",
     "numpy>=2.3.5",
     "paddleocr[all]>=3.2.0",
     "pandas>=2.3.3",
