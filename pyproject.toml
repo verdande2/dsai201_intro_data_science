@@ -16,6 +16,7 @@ dependencies = [
     "numpy>=2.3.5",
     "paddleocr[all]>=3.2.0",
     "pandas>=2.3.3",
+    "pygments>=2.19.2",
     "sense2vec>=2.0.2",
     "spacy>=3.8.7",
     "speechrecognition[audio]>=3.14.3",
